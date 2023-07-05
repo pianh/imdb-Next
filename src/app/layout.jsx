@@ -1,6 +1,8 @@
+
 import Header from '@/components/Header'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import Providers from './Providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,16 +14,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
-      <meta name="description" content="This is the Imdb"></meta>
       <body className={inter.className}>
+        <Providers>
         {/* Header */}
         <Header />
         {/* Navbar */}
 
         {/* Search Box */}
 
-        {children}</body>
+        {children}
+        </Providers>
+        </body>
     </html>
   )
 }
